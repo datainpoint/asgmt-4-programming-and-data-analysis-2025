@@ -2,19 +2,19 @@ import unittest
 import importlib
 
 class TestAssignmentFour(unittest.TestCase):
-    def test_01_Pet(self):
+    def test_01(self):
         dog = asgmt.Pet('Dog', 'Bark')
         self.assertEqual(dog.species, 'Dog')
         self.assertEqual(dog.make_sound(), 'Bark')
         kitty = asgmt.Pet('Cat', 'Meow')
         self.assertEqual(kitty.species, 'Cat')
         self.assertEqual(kitty.make_sound(), 'Meow')
-    def test_02_Hogwarts(self):
+    def test_02(self):
         hogwarts = asgmt.Hogwarts()
         self.assertEqual(hogwarts.location, 'Scotland')
         self.assertEqual(hogwarts.founders, ['Godric Gryffindor', 'Salazar Slytherin', 'Rowena Ravenclaw', 'Helga Hufflepuff'])
         self.assertEqual(hogwarts.houses, ['Gryffindor', 'Slytherin', 'Ravenclaw', 'Hufflepuff'])
-    def test_03_Gryffindor(self):
+    def test_03(self):
         harry_potter = asgmt.Gryffindor("Harry Potter")
         self.assertIsInstance(harry_potter.name, str)
         self.assertIsInstance(harry_potter.traits, list)
@@ -25,7 +25,7 @@ class TestAssignmentFour(unittest.TestCase):
         self.assertIsInstance(hermione_granger.traits, list)
         self.assertIsInstance(hermione_granger.colors, list)
         self.assertEqual(hermione_granger.cast_a_spell(), 'Expelliarmus!')
-    def test_04_StrCase(self):
+    def test_04(self):
         luke = asgmt.StrCase('Luke Skywalker')
         self.assertEqual(luke.upper_case(), 'LUKE SKYWALKER')
         self.assertEqual(luke.lower_case(), 'luke skywalker')
@@ -34,7 +34,7 @@ class TestAssignmentFour(unittest.TestCase):
         self.assertEqual(anakin.upper_case(), 'ANAKIN SKYWALKER')
         self.assertEqual(anakin.lower_case(), 'anakin skywalker')
         self.assertEqual(anakin.swap_case(), 'aNAKIN sKYWALKER')
-    def test_05_MethodCalculator(self):
+    def test_05(self):
         method_calculator = asgmt.MethodCalculator(5, 6)
         self.assertEqual(method_calculator.add(), 11)
         self.assertEqual(method_calculator.subtract(), -1)
@@ -45,7 +45,7 @@ class TestAssignmentFour(unittest.TestCase):
         self.assertEqual(method_calculator.subtract(), 0)
         self.assertEqual(method_calculator.multiply(), 100)
         self.assertGreaterEqual(method_calculator.divide(), 1)
-    def test_06_SymbolicCalculator(self):
+    def test_06(self):
         symbolic_calculator = asgmt.SymbolicCalculator(10, 2)
         self.assertGreaterEqual(symbolic_calculator.calculate('+'), 12)
         self.assertGreaterEqual(symbolic_calculator.calculate('-'), 8)
@@ -58,7 +58,7 @@ class TestAssignmentFour(unittest.TestCase):
         self.assertGreaterEqual(symbolic_calculator.calculate('*'), 50)
         self.assertGreaterEqual(symbolic_calculator.calculate('/'), 2.0)
         self.assertGreaterEqual(symbolic_calculator.calculate('**'), 100000)
-    def test_07_Reversible(self):
+    def test_07(self):
         reversible = asgmt.Reversible('Luke')
         self.assertEqual(reversible.reverse(), 'ekuL')
         reversible = asgmt.Reversible([2, 5, 3, 7, 11])
@@ -67,7 +67,7 @@ class TestAssignmentFour(unittest.TestCase):
         self.assertEqual(reversible.reverse(), (2, 5, 3, 7, 11))
         reversible = asgmt.Reversible({0: 'Sunday', 6: 'Saturday'})
         self.assertEqual(reversible.reverse(), {'Sunday': 0, 'Saturday': 6})
-    def test_08_SortList(self):
+    def test_08(self):
         sort_list = asgmt.SortList([2, 5, 3, 7, 11])
         self.assertEqual(sort_list.sort_desc(), [11, 7, 5, 3, 2])
         self.assertEqual(sort_list.sort_asc(), [2, 3, 5, 7, 11])
@@ -77,7 +77,7 @@ class TestAssignmentFour(unittest.TestCase):
         sort_list = asgmt.SortList(['a', 'b', 'c'])
         self.assertEqual(sort_list.sort_desc(), ['c', 'b', 'a'])
         self.assertEqual(sort_list.sort_asc(), ['a', 'b', 'c'])
-    def test_09_WeekBuilder(self):
+    def test_09(self):
         week_builder = asgmt.WeekBuilder(0, 1, 2)
         self.assertEqual(week_builder.build(), {0: 'Sunday', 1: 'Monday', 2: 'Tuesday'})
         week_builder = asgmt.WeekBuilder(5, 6)
@@ -86,7 +86,7 @@ class TestAssignmentFour(unittest.TestCase):
         self.assertEqual(week_builder.build(), {0: 'Sunday', 6: 'Saturday'})
         week_builder = asgmt.WeekBuilder(1, 3, 5)
         self.assertEqual(week_builder.build(), {1: 'Monday', 3: 'Wednesday', 5: 'Friday'})
-    def test_10_IsInstance(self):
+    def test_10(self):
         is_instance = asgmt.IsInstance()
         self.assertTrue(is_instance.is_int(5566))
         self.assertTrue(is_instance.is_float(3.14))
